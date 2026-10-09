@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>NogorGoti | Move Smarter Through Dhaka</title>
+  <link rel="stylesheet" href="css/global.css"><link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+<header class="topbar floating-topbar">
+  <a class="brand" href="index.html"><span class="brand-mark">N</span><span><strong>NogorGoti</strong><small>Dhaka moves better together</small></span></a>
+  <nav class="desktop-nav"><a href="#fare-search">Find fare</a><a href="#features">Explore</a><a href="#access">Access</a></nav>
+  <a class="btn btn-dark btn-small" href="login.html?role=PASSENGER">Sign in</a>
+</header>
+<main>
+<section class="home-hero">
+  <div class="transit-orbit orbit-one"></div><div class="transit-orbit orbit-two"></div>
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <span class="pill pill-soft"><span class="status-dot"></span> Smart local transport information</span>
+      <h1>Move through <em>Dhaka</em> with more confidence.</h1>
+      <p>Check fares, understand route sequences, compare commuter-reported prices, and ask the community before you travel.</p>
+      <div class="hero-actions"><a class="btn btn-primary" href="#fare-search">Check a fare →</a><a class="btn btn-ghost" href="guest.html">Explore as guest</a></div>
+      <div class="mini-proof"><div><strong>Route-first</strong><span>See stops in travel order</span></div><div><strong>Fare-aware</strong><span>Official + commuter insight</span></div><div><strong>Community-led</strong><span>Learn from real passengers</span></div></div>
+    </div>
+    <section class="fare-card" id="fare-search">
+      <span class="section-kicker">QUICK JOURNEY CHECK</span>
+      <div class="fare-card-heading"><div><h2>What should this trip cost?</h2><p>Choose two stops and a transport type.</p></div><span class="route-glyph">↗</span></div>
+      <form id="homeFareForm" class="stack-form">
+        <label class="journey-input"><span class="journey-node start"></span><span><small>FROM</small><select id="homeOrigin" required><option value="">Select origin stop</option></select></span></label>
+        <div class="journey-thread"></div>
+        <label class="journey-input"><span class="journey-node end"></span><span><small>TO</small><select id="homeDestination" required><option value="">Select destination stop</option></select></span></label>
+        <label class="field"><span>Transport type</span><select id="homeTransportType"><option value="BUS">Bus</option><option value="RICKSHAW">Rickshaw</option><option value="TAXI">Taxi</option></select></label>
+        <button class="btn btn-dark btn-block" type="submit">Find fare →</button>
+      </form>
+      <div id="homeFareResult" class="result-panel hidden"></div>
+    </section>
+  </div>
+</section>
+<section class="content-section" id="features">
+  <div class="section-title-row"><div><span class="section-kicker">BUILT FOR DAILY COMMUTES</span><h2>Not just a fare checker.</h2></div><p>NogorGoti turns scattered local transport information into a practical commuter tool.</p></div>
+  <div class="feature-mosaic">
+    <article class="feature-tile large"><span class="feature-index">01</span><span class="feature-symbol">↝</span><div><h3>Route Explorer</h3><p>Follow routes stop by stop instead of guessing where a vehicle goes next.</p><a href="guest.html?tab=routes">Explore routes →</a></div></article>
+    <article class="feature-tile"><span class="feature-index">02</span><span class="feature-symbol">৳</span><div><h3>Fare Intelligence</h3><p>Compare official fare information with what commuters report paying.</p><a href="guest.html?tab=fare-tracker">View fare reports →</a></div></article>
+    <article class="feature-tile"><span class="feature-index">03</span><span class="feature-symbol">◎</span><div><h3>Stops & Stations</h3><p>Browse known stops and location information from one place.</p><a href="guest.html?tab=stops">Find stops →</a></div></article>
+    <article class="feature-tile wide"><span class="feature-index">04</span><span class="feature-symbol">◌</span><div><h3>Commuter Community</h3><p>Read route questions, replies, ratings, and practical passenger experiences.</p><a href="guest.html?tab=forum">Visit community →</a></div></article>
+  </div>
+</section>
+<section class="content-section access-section" id="access">
+  <div class="section-title-row"><div><span class="section-kicker">CHOOSE YOUR EXPERIENCE</span><h2>One platform. Three ways to use it.</h2></div><p>Browse freely, contribute as a commuter, or manage transport information as an administrator.</p></div>
+  <div class="role-grid">
+    <article class="role-card"><div class="role-top"><span class="pill">No account needed</span><span>↗</span></div><span class="role-mark neutral">G</span><h3>Guest</h3><p>Quick access to transport information.</p><ul class="check-list"><li>Explore routes and stops</li><li>Check standard fares</li><li>View commuter fare reports</li><li>Read forum discussions and ratings</li></ul><a class="btn btn-ghost btn-block" href="guest.html">Continue as guest</a></article>
+    <article class="role-card featured"><span class="featured-label">BEST FOR COMMUTERS</span><div class="role-top"><span class="pill">Personal account</span><span>↗</span></div><span class="role-mark passenger">P</span><h3>Passenger</h3><p>Contribute useful information and use personal tools.</p><ul class="check-list"><li>Everything guests can access</li><li>Submit fare reports</li><li>Post and reply in the forum</li><li>Submit ratings and complaints</li><li>Request student verification</li></ul><a class="btn btn-primary btn-block" href="login.html?role=PASSENGER">Passenger access</a></article>
+    <article class="role-card"><div class="role-top"><span class="pill">Authorized access</span><span>↗</span></div><span class="role-mark admin">A</span><h3>Administrator</h3><p>Maintain the information commuters rely on.</p><ul class="check-list"><li>Manage transports, stops and routes</li><li>Maintain fares and route stops</li><li>Approve student verification</li><li>Review and verify complaints</li></ul><a class="btn btn-dark btn-block" href="login.html?role=ADMIN">Admin login</a></article>
+  </div>
+</section>
+<section class="final-cta"><div><span class="section-kicker light">NOGORGOTI</span><h2>Better information makes every journey easier.</h2></div><a class="btn btn-light" href="#fare-search">Plan your next trip →</a></section>
+</main>
+<footer class="site-footer"><a class="brand" href="index.html"><span class="brand-mark">N</span><span><strong>NogorGoti</strong><small>Smart Local Transportation System</small></span></a><p>Clearer, more accessible, community-driven commuting information.</p><span>CSE370 DBMS Project</span></footer>
+<div id="toastHost" class="toast-host"></div>
+<script src="js/api.js"></script><script src="js/common.js"></script><script src="js/home.js"></script>
+</body></html>

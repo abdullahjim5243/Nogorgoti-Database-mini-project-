@@ -1,0 +1,7 @@
+const API_BASE_URL="http://127.0.0.1:8000",TOKEN_KEY="nogorgoti_access_token",USER_KEY="nogorgoti_user";
+function getAccessToken(){return localStorage.getItem(TOKEN_KEY)}
+function getStoredUser(){try{return JSON.parse(localStorage.getItem(USER_KEY)||"null")}catch{return null}}
+function saveSession(token,user){localStorage.setItem(TOKEN_KEY,token);localStorage.setItem(USER_KEY,JSON.stringify(user))}
+function clearSession(){localStorage.removeItem(TOKEN_KEY);localStorage.removeItem(USER_KEY)}
+async function apiRequest(path,{method="GET",body=null,auth=false,headers={}}={}){const h={...headers};if(body!==null)h["Content-Type"]="application/json";if(auth){const token=getAccessToken();if(!token)throw new Error("Please sign in first.");h.Authorization=`Bearer ${token}`}const response=await fetch(`${API_BASE_URL}${path}`,{method,headers:h,body:body!==null?JSON.stringify(body):undefined});const type=response.headers.get("content-type")||"";const data=type.includes("application/json")?await response.json():await response.text();if(!response.ok){const message=data&&typeof data==="object"?(data.detail||data.message||`Request failed (${response.status})`):(data||`Request failed (${response.status})`);if(response.status===401&&auth)clearSession();throw new Error(message)}return data}
+function buildQuery(params){const q=new URLSearchParams();Object.entries(params).forEach(([k,v])=>{if(v!==undefined&&v!==null&&v!=="")q.set(k,v)});return q.toString()}
